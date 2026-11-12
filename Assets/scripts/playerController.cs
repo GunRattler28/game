@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    // Movement
+    
     public InputAction moveAction;
     public InputAction jumpAction;
     public LayerMask ground;
@@ -15,6 +17,11 @@ public class PlayerController : MonoBehaviour
     private float move;
     private bool grounded;
     private bool jumpRequested;
+
+    // Health
+
+    public int maxHealth;
+    private int currentHealth;
 
     void OnEnable()
     {
@@ -32,6 +39,7 @@ public class PlayerController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         collisionBox = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        currentHealth = maxHealth;
     }
 
     void Update()
@@ -76,5 +84,13 @@ public class PlayerController : MonoBehaviour
         jumpRequested = false;
 
         rigidBody.linearVelocity = new Vector2(move * moveSpeed, yMovement);
+    }
+
+    // Function to change health. Amount to change health by given. 'void' specifies nothing will be returned
+
+    void changeHealth(int change)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + change, 0, maxHealth); // ensures health can't go above maximum health or below zero
+        Debug.Log($"{currentHealth} / {maxHealth}");
     }
 }
