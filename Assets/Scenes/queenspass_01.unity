@@ -1700,6 +1700,67 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1001 &2282232373813918117
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2538535073413587562, guid: 80537669259e9674c8405768c5aee289, type: 3}
+      propertyPath: m_Name
+      value: spike_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750308623751406180, guid: 80537669259e9674c8405768c5aee289, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750308623751406180, guid: 80537669259e9674c8405768c5aee289, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750308623751406180, guid: 80537669259e9674c8405768c5aee289, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750308623751406180, guid: 80537669259e9674c8405768c5aee289, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750308623751406180, guid: 80537669259e9674c8405768c5aee289, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750308623751406180, guid: 80537669259e9674c8405768c5aee289, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750308623751406180, guid: 80537669259e9674c8405768c5aee289, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750308623751406180, guid: 80537669259e9674c8405768c5aee289, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750308623751406180, guid: 80537669259e9674c8405768c5aee289, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750308623751406180, guid: 80537669259e9674c8405768c5aee289, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8897812058135017084, guid: 80537669259e9674c8405768c5aee289, type: 3}
+      propertyPath: m_AutoTiling
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 80537669259e9674c8405768c5aee289, type: 3}
 --- !u!1001 &6510959621267277273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1708,10 +1769,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 199364047952594540, guid: 8e637193c4e98e34b9b74bb94f37ab72, type: 3}
-      propertyPath: m_Size.x
-      value: 1.08
-      objectReference: {fileID: 0}
     - target: {fileID: 2412528013374074377, guid: 8e637193c4e98e34b9b74bb94f37ab72, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -1756,13 +1813,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wizard
       objectReference: {fileID: 0}
-    - target: {fileID: 6787835121182631613, guid: 8e637193c4e98e34b9b74bb94f37ab72, type: 3}
-      propertyPath: jumpForce
-      value: 7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6787835121182631613, guid: 8e637193c4e98e34b9b74bb94f37ab72, type: 3}
-      propertyPath: ground.m_Bits
-      value: 8
+    - target: {fileID: 7113631657667211751, guid: 8e637193c4e98e34b9b74bb94f37ab72, type: 3}
+      propertyPath: m_SleepingMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1776,3 +1829,4 @@ SceneRoots:
   - {fileID: 1053100413}
   - {fileID: 6510959621267277273}
   - {fileID: 930883995}
+  - {fileID: 2282232373813918117}

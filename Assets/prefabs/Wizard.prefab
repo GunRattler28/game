@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6787835121182631613}
   - component: {fileID: 7113631657667211751}
   - component: {fileID: 199364047952594540}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,6 +165,7 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 7.5
   groundCheckRadius: 0.2
+  maxHealth: 100
 --- !u!50 &7113631657667211751
 Rigidbody2D:
   serializedVersion: 5

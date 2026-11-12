@@ -21,7 +21,13 @@ public class PlayerController : MonoBehaviour
     // Health
 
     public int maxHealth;
-    private int currentHealth;
+    public int currentHealth { get; private set;} // Makes currentHealth read only for other scripts so that they can still see the value but can't change it. 'private set' Allows this script to directly change health though
+
+    // Invicibility Frames
+
+    public float iTime = 1f;
+    private bool isInvincible;
+    private float damageCooldown;
 
     void OnEnable()
     {
@@ -69,6 +75,15 @@ public class PlayerController : MonoBehaviour
         } else if (move < 0) {
             spriteRenderer.flipX = true;
         }
+
+        // Time iframes
+
+        if (isInvincible){
+            damageCooldown -= Time.deltaTime;
+            if (damageCooldown <= 0){
+                isInvincible = false;
+            }
+        }
     }
 
     void FixedUpdate()
@@ -86,11 +101,21 @@ public class PlayerController : MonoBehaviour
         rigidBody.linearVelocity = new Vector2(move * moveSpeed, yMovement);
     }
 
-    // Function to change health. Amount to change health by given. 'void' specifies nothing will be returned
+    // Function to change health. Amount to change health by given. 'void' specifies nothing will be returned. 'public' lets other scripts call the function
 
-    void changeHealth(int change)
+    public void ChangeHealth(int change)
     {
-        currentHealth = Mathf.Clamp(currentHealth + change, 0, maxHealth); // ensures health can't go above maximum health or below zero
+        // Only check invicibility if taking damage
+        
+        if (change < 0){
+            if (isInvincible){
+                return;
+            }
+            isInvincible = true;
+            damageCooldown = iTime;
+        }
+
+        currentHealth = Mathf.Clamp(currentHealth + change, 0, maxHealth); // Ensures health can't go above maximum health or below zero
         Debug.Log($"{currentHealth} / {maxHealth}");
     }
 }
