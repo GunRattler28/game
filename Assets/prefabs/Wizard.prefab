@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2412528013374074377}
   - component: {fileID: 7185815625034038528}
-  - component: {fileID: 6787835121182631613}
   - component: {fileID: 7113631657667211751}
   - component: {fileID: 199364047952594540}
+  - component: {fileID: 1003260838281655696}
   m_Layer: 6
   m_Name: Wizard
   m_TagString: Untagged
@@ -95,77 +95,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
---- !u!114 &6787835121182631613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4702246615710985065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04d41b18dcbc90c4789c6edb5c7a208b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::playerController
-  moveAction:
-    m_Name: Move
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 9d17efe4-f0c6-4941-8b89-74b1bd16b1a0
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 1D Axis
-      m_Id: 9a4761f7-4a80-445f-8b70-3fe08322e22b
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 4
-    - m_Name: negative
-      m_Id: 8042c365-eeb6-40af-9ccb-53e2ccab2971
-      m_Path: <Keyboard>/a
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: positive
-      m_Id: 5a4a258d-a3c3-4d7b-8ecc-dbd95acf0f03
-      m_Path: <Keyboard>/d
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    m_Flags: 0
-    m_Priority: 0
-  jumpAction:
-    m_Name: Jump
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 24dccda2-4193-4cd6-9196-b000d3ddcb66
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: c328449e-26b6-4592-bc1d-152463d7f5a1
-      m_Path: <Keyboard>/space
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Jump
-      m_Flags: 0
-    m_Flags: 0
-    m_Priority: 0
-  ground:
-    serializedVersion: 2
-    m_Bits: 8
-  moveSpeed: 5
-  jumpForce: 7.5
-  groundCheckRadius: 0.2
-  maxHealth: 100
 --- !u!50 &7113631657667211751
 Rigidbody2D:
   serializedVersion: 5
@@ -190,7 +119,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!61 &199364047952594540
@@ -239,3 +168,75 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.08, y: 1.625}
   m_EdgeRadius: 0
+--- !u!114 &1003260838281655696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4702246615710985065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d41b18dcbc90c4789c6edb5c7a208b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  moveAction:
+    m_Name: Move
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 338f04e3-f342-427a-b5fa-c93c2bebf1b5
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 1D Axis
+      m_Id: e25aae09-fb14-4dd3-a026-e2128a846221
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: ba96c282-b45e-4dcc-bc80-87a82f9287e2
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 35bd31b4-406a-4bdd-9d98-2895bd6bd3e5
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    m_Flags: 0
+    m_Priority: 0
+  jumpAction:
+    m_Name: Jump
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 1995278c-ab43-4cc6-89ec-d735778f7bcd
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 88f88a38-6326-4442-b3c7-ae04fb704874
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump
+      m_Flags: 0
+    m_Flags: 0
+    m_Priority: 0
+  ground:
+    serializedVersion: 2
+    m_Bits: 8
+  moveSpeed: 5
+  jumpForce: 7.5
+  groundCheckRadius: 0.2
+  maxHealth: 100
+  iTime: 0.5

@@ -98,6 +98,7 @@ public class PlayerController : MonoBehaviour
         
         jumpRequested = false;
 
+        // Completely replacing means that no x knobckback on hazard hit 
         rigidBody.linearVelocity = new Vector2(move * moveSpeed, yMovement);
     }
 
