@@ -6,17 +6,23 @@ public class PlayerController : MonoBehaviour
     // Movement
     
     public InputAction moveAction;
-    public InputAction jumpAction;
-    public LayerMask ground;
     public float moveSpeed = 5f;
-    public float jumpForce = 7.5f;
-    public float groundCheckRadius = 0.2f;
     private Rigidbody2D rigidBody;
     private BoxCollider2D collisionBox;
     private SpriteRenderer spriteRenderer;
     private float move;
+
+    // Jump
+
+    public InputAction jumpAction;
+    public LayerMask ground;
+    public float groundCheckRadius = 0.2f;
+    public float jumpForce = 7.5f;
+    public float jumpDecay = 0.5f;
     private bool grounded;
     private bool jumpRequested;
+    private bool jumpReleased;
+    
 
     // Damage Knockback
     
@@ -76,6 +82,12 @@ public class PlayerController : MonoBehaviour
         if (jumpAction.IsPressed()) {
             jumpRequested = true;
         }
+
+        // Save that player let go of jump until fixed update
+
+        if (jumpAction.WasReleasedThisFrame()) {
+            jumpReleased = true;
+        }
         
         // Flip sprite when turning around. JUST visuals.
 
@@ -87,7 +99,7 @@ public class PlayerController : MonoBehaviour
 
         // Time iframes
 
-        if (isInvincible ){
+        if (isInvincible) {
             damageCooldown -= Time.deltaTime;
             if (damageCooldown <= 0){
                 isInvincible = false;
@@ -117,17 +129,20 @@ public class PlayerController : MonoBehaviour
 
         // Caps horizontal speed so that knockback + user input don't make the player move too fast
 
-        if (xMovement < -moveSpeed) {
-            xMovement = -moveSpeed;
-        } else if (xMovement > moveSpeed) {
-            xMovement = moveSpeed;
-        }
+        xMovement = Mathf.Clamp(xMovement, -moveSpeed, moveSpeed);
         
         float yMovement = rigidBody.linearVelocity.y;  // `rigidBody.linearVelocity.y` means if no jump, gravity continues as normal
 
         if (jumpRequested && grounded) {
             yMovement = jumpForce;
             grounded = false;
+        }
+
+        // Slows ascent when player lets go of jump key. Allows variable jump height
+
+        if (jumpReleased && yMovement > 0) {
+            yMovement *= jumpDecay;
+            jumpReleased = false;
         }
         
         jumpRequested = false;
