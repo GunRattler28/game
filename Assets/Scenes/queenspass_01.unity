@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 930883995}
   - component: {fileID: 930883994}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1526,7 +1526,7 @@ CompositeCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: cca2c1aacb1f1fb489f54dbd9c34f55b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
