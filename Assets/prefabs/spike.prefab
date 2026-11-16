@@ -107,6 +107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hazard
   damage: 5
+  xRebound: 1
+  yRebound: 1
 --- !u!61 &8897812058135017084
 BoxCollider2D:
   m_ObjectHideFlags: 0
